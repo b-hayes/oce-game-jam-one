@@ -1,0 +1,10 @@
+doing echo nothing in ./Meshes/
+nothing
+doing echo nothing in ./Prefabs/
+nothing
+doing echo nothing in ./Scenes/
+nothing
+doing echo nothing in ./Scripts/
+nothing
+doing echo nothing in ./Textures/
+nothing
