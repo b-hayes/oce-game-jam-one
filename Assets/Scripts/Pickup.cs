@@ -3,7 +3,8 @@
 public class Pickup : MonoBehaviour
 {
     public float bobAmount = 0.002f;
-    public float speed = 2f;
+    public float bobSpeed = 2f;
+    public float rotationSpeed = 20f;
 
     // Start is called before the first frame update
     void Start()
@@ -14,6 +15,7 @@ public class Pickup : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position += Vector3.up * (Mathf.Sin (Time.time * speed) * bobAmount);
+        transform.position += Vector3.up * (Mathf.Sin (Time.time * bobSpeed) * bobAmount);
+        transform.Rotate(Vector3.up * (rotationSpeed * Time.deltaTime));
     }
 }
