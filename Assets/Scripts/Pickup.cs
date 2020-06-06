@@ -2,6 +2,8 @@
 using UnityEngine;
 using Random = UnityEngine.Random;
 
+
+[RequireComponent(typeof(AudioSource))]
 public class Pickup : MonoBehaviour
 {
     public float bobAmount = 0.002f;
@@ -9,6 +11,7 @@ public class Pickup : MonoBehaviour
     public float rotationSpeed = 50f;
 
     public AudioClip[] pickUpSounds;
+    public GameObject pickUpEffect;
 
     // Start is called before the first frame update
     void Start()
@@ -42,15 +45,20 @@ public class Pickup : MonoBehaviour
             return;
         }
         AudioClip clip = pickUpSounds[Random.Range(0,length)];
-        AudioSource audioSource = GetComponent<AudioSource>();
-        if (! audioSource)
-        {
-            print("Pickup has no audio source");
-            return;
-        }
-        audioSource.clip = clip;
-        audioSource.loop = false;
-        audioSource.Play();
+        // AudioSource audioSource = GetComponent<AudioSource>();
+        
+        AudioSource.PlayClipAtPoint(clip, gameObject.transform.position);
+        //
+        //
+        // if (! audioSource)
+        // {
+        //     print("Pickup has no audio source");
+        //     return;
+        // }
+        // audioSource.clip = clip;
+        // audioSource.loop = false;
+        // audioSource.Play();
+        
         print("Pickup sound played");
     }
 }
