@@ -12,7 +12,6 @@ public class CreateLevel : MonoBehaviour
     public int LevelWidth = 1; // length of generation
     public int LevelLength = 4;
     public int DifficultyModifier = 1;
-    public int LevelChunkSize = 10;
 
     private Dictionary<int, List<GameObject>> DifficultyList = new Dictionary<int, List<GameObject>>();
 
@@ -78,8 +77,6 @@ public class CreateLevel : MonoBehaviour
             DifficultyList.TryGetValue(randomDifficulty, out targetList);
             if (randomDifficulty < 0) return LevelPrefabs[0];//Completely failed, pick the first one 
         }
-        var l = targetList ?? new List<GameObject>();
-
         var total = (float)targetList.Count-1;
         var selector = System.Convert.ToInt32(Random.Range(0, total-0.1f));
 
