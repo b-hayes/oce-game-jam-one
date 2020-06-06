@@ -6,8 +6,8 @@ using Random = UnityEngine.Random;
 [RequireComponent(typeof(AudioSource))]
 public class Bobbing : MonoBehaviour
 {
-    public float bobAmount = 1f;
-    public float bobSpeed = 2f;
+    public float bobAmount = 0.05f;
+    public float bobSpeed = 0.5f;
     
 
     // Start is called before the first frame update
