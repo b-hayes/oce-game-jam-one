@@ -17,14 +17,16 @@ public class CreateLevel : MonoBehaviour
 
     void Start()
     {
+       
+
         if(LevelPrefabs.Count == 0)
-        {print("no level chunk prefabs set");
+        {print("no level chunk prefabs set"); 
         return;
         }
 
         SortLevelPrefabs();
 
-        Vector3 spawnPosition = Vector3.zero;
+        Vector3 spawnPosition = this.transform.position;
 
         for(var il= 0; il< LevelLength; il++)
         {
