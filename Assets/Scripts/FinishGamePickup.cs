@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class FinishGamePickup : MonoBehaviour
 {
-    bool EndGame  = false;
-    float endTime = 0f;
+    private bool EndGame  = false;
+    private float endTime = 0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +18,7 @@ public class FinishGamePickup : MonoBehaviour
         {
             print("Game Ending");
             EndGame = true;
+             GameManager.Win();
         }
 
     }
