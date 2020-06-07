@@ -22,15 +22,16 @@ public class MainMenu : MonoBehaviour
 
     private void Update()
     {
-        if (scaryImage.activeSelf)
-        {
-            if (scaryImageAudioSource.isPlaying)
+
+            if (scaryImage.activeSelf)
             {
-                return;
+                if (scaryImageAudioSource.isPlaying)
+                {
+                    return;
+                }
+                GameManager.PlayGame();
+                scaryImage.SetActive(false);
             }
-            GameManager.PlayGame();
-            scaryImage.SetActive(false);
-        }
     }
 
     public void Quit()
