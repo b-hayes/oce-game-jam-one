@@ -6,15 +6,20 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static int currentDifficulty = 0;
+
+
+    public static void mainMenu()
+    {
+        SceneManager.LoadScene(1);
+    }
     
     public static void PlayGame(int difficulty = 0)
     {
-        print("Play button pressed");
         currentDifficulty = difficulty;
-        // SceneManager.LoadScene(1);
+        SceneManager.LoadScene(1);
     }
 
-    public void QuitGame()
+    public static void QuitGame()
     {
         Application.Quit();
     }
