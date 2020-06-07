@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class MainMenu : MonoBehaviour
 {
-    public GameObject GameManage;
-    
     public GameObject scaryImage;
     private AudioSource scaryImageAudioSource;
 
@@ -15,8 +13,9 @@ public class MainMenu : MonoBehaviour
         scaryImageAudioSource = scaryImage.GetComponent<AudioSource>();
     }
 
-    public void Play()
+    public void play()
     {
+        print("play button pressed");
         GameObject.FindGameObjectWithTag("GameManager").GetComponent<AudioSource>().Stop();
         scaryImage.SetActive(true);
     }
@@ -32,15 +31,5 @@ public class MainMenu : MonoBehaviour
             GameManager.PlayGame();
             scaryImage.SetActive(false);
         }
-    }
-
-    public void Quit()
-    {
-        GameManager.QuitGame();
-    }
-
-    public void Settings()
-    {
-        
     }
 }

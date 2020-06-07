@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     public static int currentDifficulty = 0;
 
 
-    public static void MainMenu()
+    public static void mainMenu()
     {
         SceneManager.LoadScene(1);
     }
@@ -21,7 +21,6 @@ public class GameManager : MonoBehaviour
 
     public static void QuitGame()
     {
-        UnityEditor.EditorApplication.isPlaying = false;
         Application.Quit();
     }
 }
