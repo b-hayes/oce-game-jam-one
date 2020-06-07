@@ -9,7 +9,13 @@ public class GameManager : MonoBehaviour
     
     public static void PlayGame(int difficulty = 0)
     {
+        print("Play button pressed");
         currentDifficulty = difficulty;
-        SceneManager.LoadScene(1);
+        // SceneManager.LoadScene(1);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }
