@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -7,6 +8,8 @@ public class GameManager : MonoBehaviour
 {
     public static int currentDifficulty = 0;
     public static int bananasCollected = 0;
+    public static Dictionary<string, int> pickUpsCollected = new Dictionary<string, int>();
+
     public static void MainMenu()
     {
         SceneManager.LoadScene(0);
