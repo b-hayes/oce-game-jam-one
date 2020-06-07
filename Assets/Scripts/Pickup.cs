@@ -6,6 +6,8 @@ using Random = UnityEngine.Random;
 [RequireComponent(typeof(AudioSource))]
 public class Pickup : MonoBehaviour
 {
+    public string pickUpType;
+    
     public float bobAmount = 0.002f;
     public float bobSpeed = 2f;
     public float rotationSpeed = 50f;
@@ -30,7 +32,15 @@ public class Pickup : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            print("PLayer has picked up an item.");
+            if (GameManager.pickUpsCollected.ContainsKey(pickUpType))
+            {
+                GameManager.pickUpsCollected[pickUpType] += 1;
+            }
+            else
+            {
+                GameManager.pickUpsCollected[pickUpType] = 1;
+            }
+            print("PLayer has picked up " + GameManager.pickUpsCollected[pickUpType] + " "  + pickUpType + "'s");
             PlayPickUpSound();
             Instantiate(pickUpEffect, transform.position, Quaternion.identity);
             Destroy(gameObject);

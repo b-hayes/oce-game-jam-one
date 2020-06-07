@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -6,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static int currentDifficulty = 0;
-
+    public static Dictionary<string, int> pickUpsCollected = new Dictionary<string, int>();
 
     public static void MainMenu()
     {
@@ -33,5 +34,10 @@ public class GameManager : MonoBehaviour
     public static void Win()
     {
         SceneManager.LoadScene(2);
+    }
+
+    public static AudioSource Music()
+    {
+        return GameObject.FindGameObjectWithTag("GameManager").GetComponent<AudioSource>();
     }
 }

@@ -13,10 +13,10 @@ public class MainMenu : MonoBehaviour
         scaryImageAudioSource = scaryImage.GetComponent<AudioSource>();
     }
 
-    public void play()
+    public void Play()
     {
-        print("play button pressed");
-        GameObject.FindGameObjectWithTag("GameManager").GetComponent<AudioSource>().Stop();
+        GameManager.pickUpsCollected["banana"] = 0;
+        GameManager.Music().Stop();
         scaryImage.SetActive(true);
     }
 
@@ -36,5 +36,11 @@ public class MainMenu : MonoBehaviour
     public void Quit()
     {
         GameManager.QuitGame();
+    }
+    public void ShowMainMenu()
+    {
+        GameManager.pickUpsCollected["banana"] = 0;
+        GameManager.Music().Stop();
+        GameManager.MainMenu();
     }
 }
