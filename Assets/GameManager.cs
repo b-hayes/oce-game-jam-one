@@ -7,7 +7,6 @@ public class GameManager : MonoBehaviour
 {
     public static int currentDifficulty = 0;
     public static int bananasCollected = 0;
-
     public static void MainMenu()
     {
         SceneManager.LoadScene(0);
@@ -33,5 +32,10 @@ public class GameManager : MonoBehaviour
     public static void Win()
     {
         SceneManager.LoadScene(2);
+    }
+
+    public static AudioSource Music()
+    {
+        return GameObject.FindGameObjectWithTag("GameManager").GetComponent<AudioSource>();
     }
 }

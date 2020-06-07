@@ -15,8 +15,9 @@ public class MainMenu : MonoBehaviour
 
     public void Play()
     {
-        print("play button pressed");
-        GameObject.FindGameObjectWithTag("GameManager").GetComponent<AudioSource>().Stop();
+
+        GameManager.bananasCollected = 0;
+        GameManager.Music().Stop();
         scaryImage.SetActive(true);
     }
 
