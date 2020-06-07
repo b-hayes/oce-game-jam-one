@@ -8,6 +8,9 @@ using Random = UnityEngine.Random;
 public class CreateLevel : MonoBehaviour
 {
     public List<GameObject> LevelPrefabs;
+    public GameObject StartPrefab;
+    public GameObject EndPrefab;
+
     // Start is called before the first frame update
     public int LevelWidth = 1; // length of generation
     public int LevelLength = 4;
@@ -23,27 +26,33 @@ public class CreateLevel : MonoBehaviour
         {print("no level chunk prefabs set"); 
         return;
         }
-
+       
         SortLevelPrefabs();
 
         Vector3 spawnPosition = this.transform.position;
+        SpawnPrefab(StartPrefab, ref spawnPosition);
 
-        for(var il= 0; il< LevelLength; il++)
+        for (var il= 0; il< LevelLength; il++)
         {
               for(var iw = 0; iw < LevelWidth; iw++)
             {
                 var prefab = getRandomPrefab(DifficultyModifier);
-                var props =  prefab.GetComponent<LevelProperties>();
-                var w =    props.Width;
-                var l =  props.Length;
-
-                Instantiate(prefab, spawnPosition, Quaternion.identity);
-                spawnPosition += new Vector3(l, 0, 0);
+                SpawnPrefab(prefab, ref spawnPosition);
 
             }
         }
+        SpawnPrefab(EndPrefab, ref spawnPosition);
     }
 
+    private void SpawnPrefab(GameObject prefab, ref Vector3 spawnPosition)
+    {
+        var props = prefab.GetComponent<LevelProperties>();
+        var w = props.Width;
+        var l = props.Length;
+
+        Instantiate(prefab, spawnPosition, Quaternion.identity);
+        spawnPosition += new Vector3(l, 0, 0);
+    }
     private void SortLevelPrefabs()
     {
 

@@ -37,4 +37,10 @@ public class MainMenu : MonoBehaviour
     {
         GameManager.QuitGame();
     }
+    public void ShowMainMenu()
+    {
+        GameManager.pickUpsCollected["banana"] = 0;
+        GameManager.Music().Stop();
+        GameManager.MainMenu();
+    }
 }
