@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
 
     public static void QuitGame()
     {
-        UnityEditor.EditorApplication.isPlaying = false;
+        //UnityEditor.EditorApplication.isPlaying = false;
         Application.Quit();
     }
 
