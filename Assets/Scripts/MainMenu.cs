@@ -15,7 +15,7 @@ public class MainMenu : MonoBehaviour
 
     public void Play()
     {
-        GameManager.bananasCollected = 0;
+        GameManager.pickUpsCollected["banana"] = 0;
         GameManager.Music().Stop();
         scaryImage.SetActive(true);
     }
