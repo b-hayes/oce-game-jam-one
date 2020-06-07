@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static int currentDifficulty = 0;
-
+    public static int bananasCollected = 0;
 
     public static void MainMenu()
     {

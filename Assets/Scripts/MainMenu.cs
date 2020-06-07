@@ -13,7 +13,7 @@ public class MainMenu : MonoBehaviour
         scaryImageAudioSource = scaryImage.GetComponent<AudioSource>();
     }
 
-    public void play()
+    public void Play()
     {
         print("play button pressed");
         GameObject.FindGameObjectWithTag("GameManager").GetComponent<AudioSource>().Stop();
