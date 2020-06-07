@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     public static int currentDifficulty = 0;
 
 
-    public static void MainMen()
+    public static void MainMenu()
     {
         SceneManager.LoadScene(0);
     }
@@ -23,5 +23,15 @@ public class GameManager : MonoBehaviour
     {
         UnityEditor.EditorApplication.isPlaying = false;
         Application.Quit();
+    }
+
+    public static void Lose()
+    {
+        SceneManager.LoadScene(3);
+    }
+    
+    public static void Win()
+    {
+        SceneManager.LoadScene(2);
     }
 }
