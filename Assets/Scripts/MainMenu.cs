@@ -32,4 +32,9 @@ public class MainMenu : MonoBehaviour
             scaryImage.SetActive(false);
         }
     }
+
+    public void Quit()
+    {
+        GameManager.QuitGame();
+    }
 }
